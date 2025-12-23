@@ -107,7 +107,6 @@ This project demonstrates:
 - Pointer arithmetic
 - Memory alignment handling
 - Heap fragmentation management
-- Defensive programming in C
 - Embedded-style memory management
 
 
