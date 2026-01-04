@@ -89,38 +89,33 @@ Linux / MinGW:
     gcc -Wall -Wextra -O0 -g heap.c main.c -o mini_heap
     ./mini_heap
 
+## What I learned / bugs I hit:
+How real allocators represent memory using headers + payload
+Why alignment matters (and how misalignment breaks structs/doubles)
+Fragmentation patterns and why coalescing is essential
+Splitting edge cases (remainder too small to be useful)
+Pointer validation importance to avoid heap corruption
+Why allocation/free cost becomes O(n) with a single list
 
-LIMITATIONS
------------
-This is a learning allocator, not a production malloc.
+## Limitations:
 
-- Not thread-safe or ISR-safe
-- No double-free detection
-- No best-fit / segregated free lists
-- No heap expansion
-- O(n) allocation and free complexity
+Learning allocator, not production-grade
+Not thread-safe / ISR-safe
+No double-free detection
+No best-fit / segregated free lists
+No heap expansion
+O(n) traversal cost on allocation/free
 
-
-LEARNING OUTCOMES
------------------
-This project demonstrates:
-- Pointer arithmetic
-- Memory alignment handling
-- Heap fragmentation management
-- Embedded-style memory management
-
-
-POSSIBLE EXTENSIONS
--------------------
-- Double-free detection using magic numbers
-- Heap statistics (total free, largest block, fragmentation)
-- Best-fit or next-fit allocation
-- Separate free list
-- Thread-safe version (mutex / critical section)
+## Future improvements:
+Double-free detection (magic numbers / block state validation)
+Heap statistics:
+total free bytes
+largest free block
+fragmentation ratio
+Best-fit or next-fit strategies
+Separate free list to speed allocations
+Optional “poison fill” on free to catch use-after-free
+Thread-safe version (mutex / critical section wrappers)
 
 
-LICENSE
--------
-Released for educational use.
-Feel free to fork, modify, and experiment.
 
