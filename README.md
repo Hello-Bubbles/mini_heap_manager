@@ -90,10 +90,10 @@ Linux / MinGW:
     ./mini_heap
 
 ## What I learned / bugs I hit:
-How real allocators represent memory using headers + payload
-Why alignment matters (and how misalignment breaks structs/doubles)
-Fragmentation patterns and why coalescing is essential
-Splitting edge cases (remainder too small to be useful)
+* How real allocators represent memory using headers + payload
+* Why alignment matters (and how misalignment breaks structs/doubles)
+* Fragmentation patterns and why coalescing is essential
+* Splitting edge cases (remainder too small to be useful)
 Pointer validation importance to avoid heap corruption
 Why allocation/free cost becomes O(n) with a single list
 
