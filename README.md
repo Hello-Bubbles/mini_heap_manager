@@ -100,21 +100,21 @@ Linux / MinGW:
 ## Limitations:
 
 * Learning allocator, not production-grade
-*Not thread-safe / ISR-safe
-*No double-free detection
-*No best-fit / segregated free lists
-*No heap expansion
-*O(n) traversal cost on allocation/free
+* Not thread-safe / ISR-safe
+* No double-free detection
+* No best-fit / segregated free lists
+* No heap expansion
+* O(n) traversal cost on allocation/free
 
 ## Future improvements:
-*Double-free detection (magic numbers / block state validation)
-*Heap statistics:
-*total free bytes
-*largest free block
-*fragmentation ratio
-*Best-fit or next-fit strategies
-*Separate free list to speed allocations
-*Optional “poison fill” on free to catch use-after-free
-*Thread-safe version (mutex / critical section wrappers)
+* Double-free detection (magic numbers / block state validation)
+* Heap statistics:
+* total free bytes
+* largest free block
+* fragmentation ratio
+* Best-fit or next-fit strategies
+* Separate free list to speed allocations
+* Optional “poison fill” on free to catch use-after-free
+* Thread-safe version (mutex / critical section wrappers)
 
 
