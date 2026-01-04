@@ -1,0 +1,35 @@
+         mini_malloc(n)
+              |
+              | align n to 8
+              v
+   traverse block list (first-fit)
+              |
+      +-------+--------+
+      | found free?    |---- no ----> return NULL
+      +-------+--------+
+              |
+             yes
+              |
+    can split remainder?
+        |            |
+       yes          no
+        |            |
+   split block    use whole
+        |            |
+        +-------> mark USED
+                   |
+                   v
+            return payload ptr
+
+
+         mini_free(ptr)
+              |
+      validate ptr (range + 8B aligned)
+              |
+        find owning block header
+              |
+        mark block FREE
+              |
+    coalesce adjacent FREE blocks
+              |
+           return
